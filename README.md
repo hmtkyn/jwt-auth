@@ -16,16 +16,13 @@ This plugin probably is the most convenient way to do JWT Authentication in Word
 
 ```php
 <?php
-$data = array(
-    'token' => $token,
-    'user_email' => $user->data->user_email,
-    'user_nicename' => $user->data->user_nicename,
-    'user_display_name' => $user->data->display_name,
+'data' => array(
+    ...
     //new
     'user_role' => get_user_meta( $user->data->ID, 'wp_capabilities' , true ),
     //new
     'user_image' => get_avatar_url( $user->data->user_email, ['size' => '64'] )
-);
+),
 ```
 
 ## Requirements
