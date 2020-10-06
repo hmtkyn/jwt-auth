@@ -225,6 +225,8 @@ class Auth {
 				'firstName'   => $user->first_name,
 				'lastName'    => $user->last_name,
 				'displayName' => $user->display_name,
+				'user_role' => get_user_meta( $user->data->ID, 'wp_capabilities' , true ),
+				'user_image' => get_avatar_url( $user->data->user_email, ['size' => '64'] )
 			),
 		);
 
